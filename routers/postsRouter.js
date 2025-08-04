@@ -3,6 +3,8 @@ const express = require(`express`)
 // definisco l'oggetto router
 const router = express.Router()
 
+//importo il controller
+const { index, show, store, update, modify, destroy } = require(`../controllers/postsController.js`)
 
 const posts = [
   {
@@ -52,23 +54,23 @@ const posts = [
 
 // definizione rotte per i post
 // index
-router.get(`/`, )
+router.get(`/`, index)
 
 // show
-router.get(`/:id`, )
+router.get(`/:id`, show)
 
 // create
-router.post(`/`, )
+router.post(`/`, store)
 
 // update
-router.put(`/:id`, )
+router.put(`/:id`, update)
 
 // patch
-router.patch(`/:id`, )
+router.patch(`/:id`, modify)
 
 
 // delete
-router.delete(`/:id`, )
+router.delete(`/:id`, destroy)
 
 //esporto il router
 module.exports = router;

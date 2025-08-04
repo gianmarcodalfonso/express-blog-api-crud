@@ -49,3 +49,12 @@ const modify = (req,res) => {
 const destroy = (req,res) => {
   res.send(`cancellazione del post con id: ${req.params.id}`)
 }
+
+module.exports = {
+  index,
+  show,
+  store,
+  update,
+  modify,
+  destroy
+}
