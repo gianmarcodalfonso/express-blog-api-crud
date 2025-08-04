@@ -1,4 +1,6 @@
-const posts = `placeholder`
+//importo i dati dei posts
+const posts = require(`../data/posts.js`)
+
 // definizione delle funzioni che verranno richiamate
 //index
 const index = (req, res) => {
