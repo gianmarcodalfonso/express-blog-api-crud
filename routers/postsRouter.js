@@ -3,14 +3,8 @@ const express = require(`express`)
 // definisco l'oggetto router
 const router = express.Router()
 
-// richiesta
-const param = req.query
-const title = param.title
 
-// definizione rotte per i post
-// index
-router.get(`/`, (req, res) => {
-  const posts = [
+const posts = [
   {
     id: 1,
     title: "Ciambellone",
@@ -55,34 +49,26 @@ router.get(`/`, (req, res) => {
     tags: ["Dolci", "Dolci al cioccolato", "Torte", "Ricette vegetariane", "Ricette al forno"],
   },
   ];
-  res.json(posts)
-})
+
+// definizione rotte per i post
+// index
+router.get(`/`, )
 
 // show
-router.get(`/:id`, (req,res) => {
-  res.send(`Dettaglio del post con id: ${req.params.id}`)
-})
+router.get(`/:id`, )
 
 // create
-router.post(`/`, (req,res) => {
-  res.send(`creazione di un nuovo post`)
-})
+router.post(`/`, )
 
 // update
-router.put(`/:id`, (req,res) => {
-  res.send(`Modifica totale del post con id: ${req.params.id}`)
-})
+router.put(`/:id`, )
 
 // patch
-router.patch(`/:id`, (req,res) => {
-  res.send(`Modifica parziale del post con id: ${req.params.id}`)
-})
+router.patch(`/:id`, )
 
 
 // delete
-router.delete(`/:id`, (req,res) => {
-  res.send(`cancellazione del post con id: ${req.params.id}`)
-})
+router.delete(`/:id`, )
 
 //esporto il router
 module.exports = router;
