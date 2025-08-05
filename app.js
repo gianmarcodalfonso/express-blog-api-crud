@@ -10,6 +10,9 @@ const port = 3000;
 // Middleware per i file statici
 app.use(express.static(`public`));
 
+// Middleware body parser
+app.use(express.json())
+
 // importo il file router per i post
 const postsRouter = require(`./routers/postsRouter.js`)
 
