@@ -53,7 +53,15 @@ const store = (req,res) => {
 
 //update
 const update = (req,res) => {
-  res.send(`Modifica totale del post con id: ${req.params.id}`)
+  const id = parseInt(req.params.id);
+
+  const post = posts.find(item => item.id === id);
+
+  post.title = req.body.title;
+  post.content = req.body.content;
+  post.tags = req.body.tags;
+
+  res.send(post)
 }
 
 //modify
