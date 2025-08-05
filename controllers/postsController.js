@@ -57,6 +57,10 @@ const update = (req,res) => {
 
   const post = posts.find(item => item.id === id);
 
+  if(!post){
+    return res.status(404).json({error:"404 not found", message:"Post non trovato"});
+  }
+
   post.title = req.body.title;
   post.content = req.body.content;
   post.tags = req.body.tags;
