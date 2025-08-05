@@ -4,6 +4,18 @@ const posts = require(`../data/posts.js`)
 // definizione delle funzioni che verranno richiamate
 //index
 const index = (req, res) => {
+  //recupero eventuale chiave
+  const tag = req.query.tag;
+
+  //definisco una variabile che contenga i post filtrati
+  let filteredPosts = posts
+
+  //verifico la richiesta
+  if(tag){
+    filteredPosts = posts.filter(item => {
+      return item.tags.map(tag => tag.toLowerCase()).includes(tag.toLowerCase());
+    })  }
+
   res.json(posts)
 }
 
