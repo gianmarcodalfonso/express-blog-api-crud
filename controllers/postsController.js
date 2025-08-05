@@ -4,19 +4,7 @@ const posts = require(`../data/posts.js`)
 // definizione delle funzioni che verranno richiamate
 //index
 const index = (req, res) => {
-  //recupero eventuale chiave
-  const post = req.query.id;
-
-  //definisco una variabile che contenga i post filtrati
-  let filteredPosts = posts
-
-  //verifico la richiesta
-  if(post != undefined){
-    //eseguo il filtraggio
-    filteredPosts = posts.filter(item => item.post.includes(post.toLowerCase()))
-  }
-
-  res.json(filteredPosts)
+  res.json(posts)
 }
 
 //show
@@ -49,11 +37,11 @@ const modify = (req,res) => {
 
 //destroy
 const destroy = (req,res) => {
-  const id = parseInt(req.params.id)
+  const id = parseInt(req.params.id);
 
-  const post = posts.find( item => item.id === id)
+  const post = posts.find( item => item.id === id);
 
-  posts.splice(post.indexOf(), 1);
+  posts.splice(posts.indexOf(post), 1);
 
   res.sendStatus(204);
 }
