@@ -29,6 +29,10 @@ app.get(`/`, (req, res) => {
 
 app.use(`/posts`,postsRouter);
 
+app.use(notFound);
+
+app.use(errorsHandler);
+
 // Porta d'ascolto del server
 app.listen(port, () => {
   console.log(`Server del mio blog in ascolto alla porta ${port}!`)
