@@ -4,3 +4,5 @@ const notFound = (req, res, next) => {
     message: "Pagina non trovata"
   })
 }
+
+module.exports = notFound

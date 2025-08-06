@@ -7,6 +7,9 @@ const app = express();
 // Definiamo la porta d'ascolto del server
 const port = 3000;
 
+//custom middleware per endpoint inesistente
+const notFound = require("./middlewares/notFound.js")
+
 // Middleware per i file statici
 app.use(express.static(`public`));
 
