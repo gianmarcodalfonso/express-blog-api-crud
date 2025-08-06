@@ -10,6 +10,9 @@ const port = 3000;
 //custom middleware per endpoint inesistente
 const notFound = require("./middlewares/notFound.js")
 
+//custom middleware per errore server
+const errorsHandler = require("./middlewares/errorsHandler.js")
+
 // Middleware per i file statici
 app.use(express.static(`public`));
 
