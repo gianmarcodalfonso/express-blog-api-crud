@@ -29,6 +29,7 @@ app.get(`/`, (req, res) => {
 
 app.use(`/posts`,postsRouter);
 
+//utilizzo middleware custom globalmente
 app.use(notFound);
 
 app.use(errorsHandler);
